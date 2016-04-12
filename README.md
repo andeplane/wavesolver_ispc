@@ -5,8 +5,11 @@ A simple example solving the wave equation with a finite difference scheme using
 You need to have the ISPC compiler (download compiled binaries from https://ispc.github.io/downloads.html) and the compiler directory added in $PATH. Then simply clone this repository and run 'make' in the terminal. Run with ./wavesolver [maxGridSize] [timesteps] to get output like this:
 Macbook:wavesolver_ispc anderhaf$ ./wavesolver 2048 100
 N=128 speed (million grid points per second): 321.255 (SERIAL) vs 1820.44 (ISPC), speedup: 5.66667x
+
 N=256 speed (million grid points per second): 312.076 (SERIAL) vs 1489.45 (ISPC), speedup: 4.77273x
+
 N=384 speed (million grid points per second): 313.736 (SERIAL) vs 1694.9 (ISPC), speedup: 5.4023x
+
 N=512 speed (million grid points per second): 226.572 (SERIAL) vs 1213.63 (ISPC), speedup: 5.35648x
 N=640 speed (million grid points per second): 250.673 (SERIAL) vs 1308.63 (ISPC), speedup: 5.22045x
 N=768 speed (million grid points per second): 265.567 (SERIAL) vs 1302.04 (ISPC), speedup: 4.90287x
