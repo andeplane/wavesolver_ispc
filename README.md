@@ -1,6 +1,9 @@
 # Wavesolver ISPC #
 A simple example solving the wave equation with a finite difference scheme using Intel's ISPC compiler. It shows how easy it is to write two versions of the solver that requires high performance - one serial and one ISPC version. On my Macbook Pro Retina i get a speedup ~4x with almost the same code. 
 
+## What is ISPC ##
+ISPC is an open source compiler written by Intel (https://ispc.github.io/). They introduced a new language (extension to C) to simplify writing SPMD (Single Program Multiple Data) programs. The idea is to write small programs that will run independently in parallel (like on the GPU) enabling easier use of SIMD (Single Instruction Multiple Data). ISPC also supports using multiple cores so that parallelization on a single machine with full SIMD support is trivial.
+
 ## How to use ##
 You need to have the ISPC compiler (download compiled binaries from https://ispc.github.io/downloads.html) and the compiler directory added in $PATH. Then simply clone this repository and run 'make' in the terminal. Run with ./wavesolver [maxGridSize] [timesteps] to get output like this:
 
