@@ -9,15 +9,17 @@ double run(int gridSize, int timesteps, bool serial) {
     WaveSolver solver(gridSize);
     unsigned int N = timesteps;
 
-    struct timeval start, end;
-    gettimeofday(&start, NULL);
-
+    double t = 1e9;
     for(unsigned int j=0; j<N; j++) {
+        struct timeval start, end;
+        gettimeofday(&start, NULL);
         solver.step(serial);
+        gettimeofday(&end, NULL);
+        double timeElapsed = ((end.tv_sec  - start.tv_sec) * 1000000u + end.tv_usec - start.tv_usec) / 1.e6;
+        t = std::min(t, timeElapsed);
     }
-    gettimeofday(&end, NULL);
-    double timeElapsed = ((end.tv_sec  - start.tv_sec) * 1000000u + end.tv_usec - start.tv_usec) / 1.e6;
-    return solver.gridSize()*solver.gridSize()*N/timeElapsed*1e-6;
+    
+    return solver.gridSize()*solver.gridSize()/t*1e-6;
 }
 
 int main(int args, char **argv)
