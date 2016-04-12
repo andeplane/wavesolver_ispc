@@ -1,5 +1,6 @@
 #include <iostream>
 #include "wavesolver.h"
+#include <stdlib.h>
 #include <sys/time.h>
 
 using namespace std;
