@@ -32,7 +32,7 @@ int main(int args, char **argv)
     for(int gridSize=128; gridSize<=maxGridSize; gridSize += 128) {
         double speedSerial = run(gridSize, timesteps, true);
         double speedISPC = run(gridSize, timesteps, false);
-        cout << "N=" << gridSize << " speed (million grid points per second): " << speedSerial << " (SERIAL) vs " << speedISPC << " (ISPC), speedup: " << speedISPC/speedSerial << endl;
+        cout << "N=" << gridSize << " speed (million grid points per second): " << speedSerial << " (SERIAL) vs " << speedISPC << " (ISPC), speedup: " << speedISPC/speedSerial << " x" << endl;
     }
     return 0;
 }

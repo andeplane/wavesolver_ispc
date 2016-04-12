@@ -4,9 +4,9 @@ TASK_LIB=-lpthread
 TASK_OBJ=objs/tasksys.o
 
 CXX=g++
-CXXFLAGS+=-Iobjs/ -O3
+CXXFLAGS+=-Iobjs/ -O3 -std=c++11
 CC=gcc
-CCFLAGS+=-Iobjs/ -O3
+CCFLAGS+=-Iobjs/ -O3 -std=c++11
 
 LIBS=-lm $(TASK_LIB) -lstdc++
 ISPC=ispc
