@@ -38,10 +38,10 @@ static inline int index(int i, int j, int size) {
 export void wavesolver_ispc(uniform int size, uniform float c,
                         uniform const float u[], uniform const float u_prev[], uniform float u_next[])
 {
-    for (uniform int i = 0; i < size; i++) {
-        foreach (j = 0 ... size) {
-            int m = j+1;
-            int n = i+1;
+    for (uniform int j = 0; j < size; j++) {
+        foreach (i = 0 ... size) {
+            int m = i+1;
+            int n = j+1;
             float ddx = u[index(m+1, n, size)] + u[index(m-1, n, size)];
             float ddy = u[index(m, n+1, size)] + u[index(m, n-1, size)];
             float ddt_rest = 2.0*u[index(m, n, size)] - u_prev[index(m, n, size)];
