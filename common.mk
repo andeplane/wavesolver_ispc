@@ -3,9 +3,9 @@ TASK_CXX=../tasksys.cpp
 TASK_LIB=-lpthread
 TASK_OBJ=objs/tasksys.o
 
-CXX=g++-5
+CXX=g++
 CXXFLAGS+=-Iobjs/ -O2 -std=c++11
-CC=gcc-5
+CC=gcc
 CCFLAGS+=-Iobjs/ -O2 -std=c++11
 
 LIBS=-lm $(TASK_LIB) -lstdc++
