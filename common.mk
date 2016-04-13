@@ -3,14 +3,14 @@ TASK_CXX=../tasksys.cpp
 TASK_LIB=-lpthread
 TASK_OBJ=objs/tasksys.o
 
-CXX=g++
-CXXFLAGS+=-Iobjs/ -O3 -std=c++11
-CC=gcc
-CCFLAGS+=-Iobjs/ -O3 -std=c++11
+CXX=g++-5
+CXXFLAGS+=-Iobjs/ -O2 -std=c++11
+CC=gcc-5
+CCFLAGS+=-Iobjs/ -O2 -std=c++11
 
 LIBS=-lm $(TASK_LIB) -lstdc++
 ISPC=ispc
-ISPC_FLAGS+=-O3
+ISPC_FLAGS+=-O2
 ISPC_HEADER=objs/$(ISPC_SRC:.ispc=_ispc.h)
 
 ARCH:=$(shell uname -m | sed -e s/x86_64/x86/ -e s/i686/x86/ -e s/arm.*/arm/ -e s/sa110/arm/)
